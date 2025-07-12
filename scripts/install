@@ -51,7 +51,7 @@ ynh_script_progression "Creat admin..."
 ynh_systemctl --service="$app" --action="start"
 
 pushd "$install_dir"
- 	./alist admin set $password
+ 	ynh_hide_warnings ./alist admin set $password
 popd
 
 #=================================================
