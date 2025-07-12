@@ -48,8 +48,10 @@ chown -R $app:$app /var/log/$app
 #=================================================
 ynh_script_progression "Creat admin..."
 
+ynh_systemctl --service="$app" --action="start"
+
 pushd "$install_dir"
- 	./alist admin set $password
+ 	ynh_hide_warnings ./alist admin set $password
 popd
 
 #=================================================
@@ -58,7 +60,7 @@ popd
 ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="restart"
 
 #=================================================
 # END OF SCRIPT
