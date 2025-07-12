@@ -1,0 +1,71 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "alist"
+name = "AList"
+description.en = "File list program that supports multiple storage"
+description.fr = "Programme de liste de fichiers prenant en charge le stockage multiple"
+
+version = "3.45.1~ynh1"
+
+maintainers = ["eric_G"]
+
+[upstream]
+license = "AGPL-3.0"
+website = "https://alistgo.com/"
+admindoc = "https://alistgo.com/guide/install/manual.html"
+code = "https://github.com/AlistGo/alist"
+
+[integration]
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.password]
+    type = "password"
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    in_subdir = false
+    url = "https://github.com/AlistGo/alist/releases/download/v3.45.1/alist-linux-amd64.tar.gz"
+    sha256 = "43999f883806613168f26973f30da9efa07bd5c5a20cba4a2611e32103b85ec2"
+
+    # autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
+
+    [resources.apt]
+    packages = "postgresql, postgresql-contrib"
+
+    [resources.database]
+    type = "postgresql"
