@@ -1,1 +1,1 @@
-Ceci est une fausse description des fonctionalités de l'app
+Programme de liste de fichiers prenant en charge le stockage multiple.
