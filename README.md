@@ -18,10 +18,6 @@ File list program that supports multiple storage
 <a href="https://github.com/YunoHost-Apps/alist_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
 </div>
 
-
-## Screenshots
-![Screenshot of AList](./doc/screenshots/example.jpg)
-
 ## 📦 Developer info
 
 [![Automatic tests level](https://apps.yunohost.org/badge/cilevel/alist)](https://ci-apps.yunohost.org/ci/apps/alist/)
